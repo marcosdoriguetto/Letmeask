@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { ButtonHTMLAttributes } from 'react';
 
-export function Button() {
-  const [count, setCount] = useState(0)
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
+export function Button(props: ButtonProps) {
   return (
-    <button onClick={() => setCount(count + 1)}>{count}</button>
+    <button className="button" {...props} />
   )
 }
