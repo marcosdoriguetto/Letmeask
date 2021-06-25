@@ -11,7 +11,10 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 
+import toast, { Toaster } from 'react-hot-toast';
+
 import '../styles/auth.scss'
+
 
 export function Home() {
   const history = useHistory();
@@ -30,21 +33,27 @@ export function Home() {
     event.preventDefault();
 
     if (roomCode.trim() === '') {
-      return;
+      return toast('Você precisa inserir o código da sala!', {
+        icon: '👀'
+      })
     }
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
     if (!roomRef.exists()) {
-      alert('Room does not exists.');
-      return;
+      return toast.error('Código inválido. Insira um código válido.')
     }
 
+    toast(`Seja bem vindo a sala: ${roomRef.val().title}`, {
+      icon: '😊'
+    })
     history.push(`/rooms/${roomCode}`)
+
   }
 
   return (
     <div id="page-auth">
+      <Toaster />
       <aside>
         <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
