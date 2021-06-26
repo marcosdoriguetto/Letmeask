@@ -8,6 +8,19 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background-color: #F4F0FF;
+    border: 1px solid #835afd;
+
+    footer .user-info span {
+      color: #29292e;
+    }
+  }
+
+  &.answered {
+    background-color: #DBDCDD;
+  }
+
   p {
     color: #29292e;
   }
@@ -44,10 +57,7 @@
       border: 0;
       background-color: transparent;
       cursor: pointer;
-
-      svg {
-        transition: filter 0.15s;
-      }
+      transition: filter 0.15s;
 
       &.like-button {
         display: flex;
@@ -66,9 +76,7 @@
       }
 
       &:hover {
-        svg {
-          filter: brightness(0.55);
-        }
+        filter: brightness(0.55);
       }
     }
   }
