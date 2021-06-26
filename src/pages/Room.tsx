@@ -12,6 +12,7 @@ import logoImg from '../assets/images/logo.svg'
 import '../styles/room.scss'
 import { Question } from "../components/Question";
 import toast, { Toaster } from 'react-hot-toast';
+import { Logo } from "../components/Logo";
 
 type RoomParams = {
   id: string;
@@ -69,7 +70,7 @@ export function Room() {
       <Toaster />
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <Logo />
           <RoomCode code={roomId} />
         </div>
       </header>

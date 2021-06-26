@@ -11,6 +11,7 @@ import { Button } from "../components/Button";
 import '../styles/auth.scss'
 import { database } from '../services/firebase';
 import toast, { Toaster } from 'react-hot-toast';
+import { Logo } from '../components/Logo';
 
 export function NewRoom() {
   const { user } = useAuth();
@@ -47,7 +48,7 @@ export function NewRoom() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Logo letmeask" />
+          <Logo />
           <h2>Criar uma nova sala</h2>
 
           <form onSubmit={handleCreateRoom}>

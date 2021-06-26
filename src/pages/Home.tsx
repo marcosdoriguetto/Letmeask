@@ -6,6 +6,7 @@ import { FormEvent, useState } from 'react'
 import { database } from '../services/firebase'
 
 import { Button } from '../components/Button'
+import { Logo } from '../components/Logo'
 
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
@@ -67,7 +68,7 @@ export function Home() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Logo letmeask" />
+          <Logo />
 
           <button onClick={handleCreateRoom} className="create-room">
             <img src={googleIconImg} alt="Logo do google" />

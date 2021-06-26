@@ -13,6 +13,7 @@ import likeImg from '../assets/images/like.svg'
 import '../styles/room.scss'
 import deleteImg from '../assets/images/delete.svg'
 import { database } from "../services/firebase";
+import { Logo } from "../components/Logo";
 
 type RoomParams = {
   id: string;
@@ -58,7 +59,7 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <Logo />
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
