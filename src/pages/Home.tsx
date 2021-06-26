@@ -44,6 +44,12 @@ export function Home() {
       return toast.error('Código inválido. Insira um código válido.')
     }
 
+    if (roomRef.val().endedAt) {
+      return toast('Essa sala foi encerrada.', {
+        icon: '😢'
+      })
+    }
+
     toast(`Seja bem vindo a sala: ${roomRef.val().title}`, {
       icon: '😊'
     })

@@ -13,7 +13,6 @@ import '../styles/room.scss'
 import { Question } from "../components/Question";
 import toast, { Toaster } from 'react-hot-toast';
 
-
 type RoomParams = {
   id: string;
 }
@@ -24,7 +23,6 @@ export function Room() {
   const [newQuestion, setNewQuestion] = useState('');
 
   const roomId = params.id;
-
   const { title, questions } = useRoom(roomId);
 
   async function handleSendQuestion(event: FormEvent) {
@@ -64,7 +62,6 @@ export function Room() {
         authorId: user?.id
       })
     }
-
   }
 
   return (
@@ -126,6 +123,6 @@ export function Room() {
           })}
         </div>
       </main>
-    </div>
+    </div >
   )
 }
