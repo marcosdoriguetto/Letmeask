@@ -51,33 +51,42 @@
     > div {
       display: flex;
       gap: 8px;
-    }
 
-    button {
-      border: 0;
-      background-color: transparent;
-      cursor: pointer;
-      transition: filter 0.15s;
-
-      &.like-button {
+      span {
         display: flex;
-        align-items: flex-end;
-        color: #737380;
-        gap: 8px;
-        
+        align-items: center;
+        color: #e559f9;
+      }
 
-        &.liked {
-          color: #835afd;
-
-          svg path {
-            stroke: #835afd
+      button {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        transition: filter 0.3s;
+        display: flex;
+        align-items: center;
+  
+        &.like-button {
+          display: flex;
+          align-items: flex-end;
+          color: #737380;
+          gap: 8px;
+  
+          &.liked {
+            color: #835afd;
+  
+            svg path {
+              stroke: #835afd
+            }
           }
         }
-      }
-
-      &:hover {
-        filter: brightness(0.55);
+  
+        &:hover {
+          filter: brightness(0.55);
+        }
       }
     }
+
+
   }
 }
