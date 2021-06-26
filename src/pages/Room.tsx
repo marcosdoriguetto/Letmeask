@@ -45,7 +45,7 @@ export function Room() {
         avatar: user.avatar
       },
       isHighlighted: false,
-      isAnswerer: false
+      isAnswered: false
     }
 
     await database.ref(`rooms/${roomId}/questions`).push(question)
